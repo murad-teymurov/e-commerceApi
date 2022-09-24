@@ -27,6 +27,9 @@ public class Product {
 
     private double productPrice;
 
+    @ManyToOne
+    private Owner productOwner;
+
     @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinTable(name = "product_images",
         joinColumns = {
